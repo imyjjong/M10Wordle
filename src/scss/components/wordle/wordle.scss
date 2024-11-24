@@ -1,0 +1,26 @@
+@use "../../abstracts/variables";
+@use "../../abstracts/mixins";
+
+.wordle{
+    @include mixins.flexBox;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+
+    &__inputs{
+        width: 100%;
+        @include mixins.flexBox;
+    }
+
+    &__input{
+        width: 8rem;
+        aspect-ratio: 1/1;
+        background: grey;
+        border: none;
+        border: 0.1rem solid black;
+        @include mixins.flexBox;
+        font-size: 180%;
+        text-align: center;
+        text-transform: capitalize;
+    }
+}
