@@ -1,0 +1,31 @@
+$baseVars: (
+    "background": #000000,
+    "color": white,
+    "font": sans-serif
+);
+
+$wordleVars: (
+    "green": rgb(2, 127, 2),
+    "yellow": rgb(167, 167, 33),
+    "grey": grey,
+    "purple": rgb(26, 0, 60),
+    "keyboard": #2A3663
+);
+
+$alertsVars: (
+    "background": black,
+    "alertBackground": rgb(194, 195, 165),
+    "color": rgb(22, 20, 20)
+);
+
+$leaderboardVars: (
+    "background": rgb(0, 0, 0),
+    "gold": gold,
+    "silver": silver,
+    "bronze": #CE8946
+);
+
+$statsVars: (
+    "background": rgb(10, 0, 14),
+    "stat": rgb(13, 4, 24)
+);

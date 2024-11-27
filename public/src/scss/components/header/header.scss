@@ -1,0 +1,37 @@
+@use "../../abstracts/variables";
+@use "../../abstracts/mixins";
+
+.header{
+    padding: 0.4rem 2rem;
+    @include mixins.flexBox;
+    font-size: 120%;
+    font-weight: 600;
+    width: 100%;
+
+    &__navigation{
+        width: 100%;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+
+        &--leaderboard{
+            background: none;
+            border: none;
+            font-size: 100%;
+            color: map-get(variables.$baseVars, "color");
+            padding: 0.4rem;
+            @include mixins.flexBox;
+            width: 4rem;
+            aspect-ratio: 1/1;
+            transition: 0.2s all;
+
+            &:focus{
+                outline: none;
+            }
+            &:hover{
+                cursor: pointer;
+                background: lighten(map-get(variables.$baseVars, "background"), 5%);
+            }
+        }
+    }
+}

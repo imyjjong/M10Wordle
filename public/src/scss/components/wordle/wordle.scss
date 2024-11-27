@@ -1,0 +1,67 @@
+@use "../../abstracts/variables";
+@use "../../abstracts/mixins";
+@use "../../abstracts/animations";
+
+.wordle{
+    @include mixins.flexBox;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.4rem;
+    height: 100%;
+
+    &__inputs{
+        width: 100%;
+        @include mixins.flexBox;
+        gap: 0.4rem;
+
+        &--notenough{
+            @include animations.shake;
+        }
+    }
+
+    &__input{
+        height: 7rem;
+        aspect-ratio: 1/1;
+        border: 0.1rem solid rgba(253, 253, 253, 0.2);
+        @include mixins.flexBox;
+        font-size: 180%;
+        text-align: center;
+        text-transform: capitalize;
+        font-weight: 600;
+    }
+    
+    &__reveal{
+        &--green{
+            @include animations.green;
+            @for $i from 1 through 5{
+                &:nth-of-type(#{$i}){
+                    animation-delay: $i / 1.8 + s;
+                }
+            }
+        }
+        &--yellow{
+            @include animations.yellow;
+            @for $i from 1 through 5{
+                &:nth-of-type(#{$i}){
+                    animation-delay: $i / 1.8 + s;
+                }
+            }
+        }
+        &--grey{
+            @include animations.grey;
+            @for $i from 1 through 5{
+                &:nth-of-type(#{$i}){
+                    animation-delay: $i / 1.8 + s;
+                }
+            }
+        }
+        &--purple{
+            @include animations.purple;
+            @for $i from 1 through 5{
+                &:nth-of-type(#{$i}){
+                    animation-delay: $i / 1.8 + s;
+                }
+            }
+        }
+    }
+}

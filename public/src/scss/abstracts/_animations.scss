@@ -1,0 +1,123 @@
+@use "variables";
+
+@keyframes green{
+    0%{
+        transform: scaleY(1);
+        background: none;
+    }
+    50%{
+        transform: scaleY(0);
+        background: none;
+    }
+    100%{
+        transform: scaleY(1);
+        background: map-get(variables.$wordleVars, "green");
+        border: none;
+    }
+}
+
+@mixin green{
+    animation-name: green;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes yellow{
+    0%{
+        transform: scaleY(1);
+        background: none;
+    }
+    50%{
+        transform: scaleY(0);
+        background: none;
+    }
+    100%{
+        transform: scaleY(1);
+        background: map-get(variables.$wordleVars, "yellow");
+        border: none;
+    }
+}
+
+@mixin yellow{
+    animation-name: yellow;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes grey{
+    0%{
+        transform: scaleY(1);
+        background: none;
+    }
+    50%{
+        transform: scaleY(0);
+        background: none;
+    }
+    100%{
+        transform: scaleY(1);
+        background: map-get(variables.$wordleVars, "grey");
+        border: none;
+    }
+}
+
+@mixin grey{
+    animation-name: grey;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes purple{
+    0%{
+        transform: scaleY(1);
+        background: none;
+    }
+    50%{
+        transform: scaleY(0);
+        background: none;
+    }
+    100%{
+        transform: scaleY(1);
+        background: map-get(variables.$wordleVars, "purple");
+        border: none;
+    }
+}
+
+@mixin purple{
+    animation-name: purple;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes popup{
+    from{
+        transform: translateY(2rem);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
+
+@mixin popup{
+    animation-name: popup;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes shake{
+    0%{
+        transform: translateX(-0.5rem);
+    }
+    50%{
+        transform: translateX(0.5rem);
+    }
+    100%{
+        transform: translateX(-0.5rem);
+    }
+}
+
+@mixin shake{
+    animation-name: shake;
+    animation-duration: 0.15s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}

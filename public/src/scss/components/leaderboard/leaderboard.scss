@@ -1,0 +1,89 @@
+@use "../../abstracts/variables";
+@use "../../abstracts/mixins";
+@use "../../abstracts/animations";
+
+.leaderboard{
+    position: absolute;
+    background: map-get(variables.$alertsVars, "background");
+    width: 100%;
+    height: 100%;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 4rem;
+    padding: 2rem 10rem;
+
+    &__title{
+        font-size: 200%;
+    }
+
+    &__list{
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        gap: 0.8rem;
+        list-style: none;
+        width: 60%;
+        max-height: 80%;
+        overflow: hidden;
+        overflow-y: scroll;
+        background: lighten(map-get(variables.$leaderboardVars, "background"), 3%);
+        padding: 1rem;
+        border-radius: 1rem;
+
+        &::-webkit-scrollbar{
+            display: none;
+        }
+    }
+    &__player{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 2rem;
+        font-size: 120%;
+        background: map-get(variables.$leaderboardVars, "background");
+        border-radius: 0.4rem;
+
+        &:nth-of-type(1){   
+            color: map-get(variables.$leaderboardVars, "gold");
+            font-weight: 600;
+        }
+        &:nth-of-type(2){
+            color: map-get(variables.$leaderboardVars, "silver");
+            font-weight: 600;
+        }
+        &:nth-of-type(3){
+            color: map-get(variables.$leaderboardVars, "bronze");
+            font-weight: 600;
+        }
+
+        &--rank{
+            @include mixins.flexBox;
+            width: 10%;
+            font-weight: 600;
+        }
+
+        &--name{
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            gap: 2rem;
+            width: 70%;
+            padding: 0 2rem;
+
+
+            &-crown{
+                font-size: 65%
+            }
+        }
+        
+        &--score{
+            @include mixins.flexBox;
+            width: 20%;
+        }
+    }
+}

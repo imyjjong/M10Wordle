@@ -1,0 +1,44 @@
+@use "../../abstracts/variables";
+@use "../../abstracts/mixins";
+
+.keyboard{
+    @include mixins.flexBox;
+    gap: 0.4rem;
+    padding: 1rem;
+    width: 40%;
+    flex-wrap: wrap;
+
+    &__key{
+        background: map-get(variables.$wordleVars, "keyboard");
+        width: 5rem;
+        aspect-ratio: 1/1;
+        @include mixins.flexBox;
+        color: map-get(variables.$baseVars, "color");
+        border: none;
+        font-size: 100%;
+        font-weight: 600;
+        border-radius: 0.4rem;
+        padding: 2rem 0rem;
+
+        &:hover{
+            cursor: pointer;
+        }
+        &:active{
+            transform: scale(1.01);
+            background: lighten(map-get(variables.$wordleVars, "keyboard"), 3%);
+        }
+        &:focus{
+            outline: none;
+        }
+
+        &--grey{
+            background: map-get(variables.$wordleVars, "grey");
+        }
+        &--yellow{
+            background: map-get(variables.$wordleVars, "yellow");
+        }
+        &--green{
+            background: map-get(variables.$wordleVars, "green");
+        }
+    }
+}
